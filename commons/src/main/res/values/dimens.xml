@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Bottom Navigation View Dimens -->
+    <dimen name="bottom_nav_view_height">56dp</dimen>
+    <dimen name="bottom_nav_view_image_marginTop">6dp</dimen>
+    <dimen name="bottom_nav_view_text_marginBottom">10dp</dimen>
+    <dimen name="bottom_nav_view_text_sizeDefault">12dp</dimen>
+    <dimen name="bottom_nav_view_text_sizeSelect">14dp</dimen>
+</resources>

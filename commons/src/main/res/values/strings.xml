@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Commons</string>
+
+    <!-- Bottom Nav Strings -->
+    <string name="bottom_nav_headlines">HeadLines</string>
+    <string name="bottom_nav_sources">Sources</string>
+    <string name="bottom_nav_inbox">InBox</string>
+    <string name="bottom_nav_profile">Profile</string>
+
+</resources>

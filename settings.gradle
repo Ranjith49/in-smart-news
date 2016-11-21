@@ -1,0 +1,1 @@
+include ':app', ':profile', ':inbox', ':sources', ':headlines', ':commons'

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">OnBoarding</string>
+    <string name="onboard_skip">SKIP</string>
+    <string name="onboard_done">DONE</string>
 </resources>

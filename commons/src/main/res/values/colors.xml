@@ -11,5 +11,6 @@
     <color name="colorDivider">#BDBDBD</color>
 
     <!-- Various color codes commonly used in the app -->
-    <color name="color_000000">#000000</color>
+    <color name="color_black">#000000</color>
+    <color name="color_white">#ffffff</color>
 </resources>

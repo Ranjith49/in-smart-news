@@ -6,7 +6,12 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true">
-        <activity android:name=".activity.OnBoardingActivity">
+
+        <!-- On Boarding Activity -->
+        <activity
+            android:name=".activity.OnBoardingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_No_Action_Bar">
         </activity>
     </application>
 

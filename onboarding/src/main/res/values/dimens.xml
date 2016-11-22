@@ -1,0 +1,6 @@
+<resources>
+    <!-- On Boarding Bottom Sliding View Dimens -->
+    <dimen name="onboard_bottom_slide_view_height">56dp</dimen>
+    <dimen name="onboard_bottom_slide_item_padding">20dp</dimen>
+    <dimen name="onboard_bottom_slide_text_size">16dp</dimen>
+</resources>

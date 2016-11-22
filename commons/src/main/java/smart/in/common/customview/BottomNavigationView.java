@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import smart.in.common.R;
-import smart.in.common.entity.BottomNavigationType;
+import smart.in.common.entity.AppSectionType;
 
 /**
  * Application Bottom Navigation View representing the 4 sections of the Application
@@ -66,22 +66,22 @@ public class BottomNavigationView extends LinearLayout implements View.OnClickLi
     defaultTextSize = getResources().getDimension(R.dimen.bottom_nav_view_text_sizeDefault);
 
     //TODO Update Current Selection, When Preference is Implemented
-    updateSectionSelectionStatus(BottomNavigationType.SOURCES);
+    updateSectionSelectionStatus(AppSectionType.SOURCES);
   }
 
   @Override
   public void onClick(View v) {
     if (v.getId() == R.id.bottom_nav_headlines) {
-      updateSectionSelectionStatus(BottomNavigationType.HEADLINES);
+      updateSectionSelectionStatus(AppSectionType.HEADLINES);
     }
     if (v.getId() == R.id.bottom_nav_sources) {
-      updateSectionSelectionStatus(BottomNavigationType.SOURCES);
+      updateSectionSelectionStatus(AppSectionType.SOURCES);
     }
     if (v.getId() == R.id.bottom_nav_inbox) {
-      updateSectionSelectionStatus(BottomNavigationType.INBOX);
+      updateSectionSelectionStatus(AppSectionType.INBOX);
     }
     if (v.getId() == R.id.bottom_nav_profile) {
-      updateSectionSelectionStatus(BottomNavigationType.PROFILE);
+      updateSectionSelectionStatus(AppSectionType.PROFILE);
     }
   }
 
@@ -90,7 +90,7 @@ public class BottomNavigationView extends LinearLayout implements View.OnClickLi
    *
    * @param navType -- current Nav Type
    */
-  private void updateSectionSelectionStatus(BottomNavigationType navType) {
+  private void updateSectionSelectionStatus(AppSectionType navType) {
     switch (navType) {
       case HEADLINES:
         headLinesTextView.setTextSize(selectedTextSize);

@@ -1,1 +1,1 @@
-include ':app', ':profile', ':inbox', ':sources', ':headlines', ':commons'
+include ':app', ':profile', ':inbox', ':sources', ':headlines', ':commons', ':onboarding'

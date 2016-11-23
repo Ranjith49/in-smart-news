@@ -7,8 +7,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import smart.in.common.helper.CommonNavigator;
+import smart.in.common.helper.pref.PreferenceManager;
 import smartin.onboarding.R;
 import smartin.onboarding.adapter.OnBoardViewPagerAdapter;
+import smartin.onboarding.helper.OnBoardingPrefType;
 
 public class OnBoardingActivity extends Activity {
 
@@ -75,6 +78,13 @@ public class OnBoardingActivity extends Activity {
         updateViewPagerPosition(pageIndex);
       }
     });
+
+    onBoardSkip.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        handleOnBoardingDone();
+      }
+    });
   }
 
   /**
@@ -109,5 +119,14 @@ public class OnBoardingActivity extends Activity {
    */
   private void updateViewPagerPosition(int position) {
     onBoardViewPager.setCurrentItem(position);
+  }
+
+  /**
+   * Method to inform on boarding is done..
+   */
+  private void handleOnBoardingDone() {
+    PreferenceManager.savePreference(OnBoardingPrefType.ON_BOARD_DONE, true);
+    CommonNavigator.gotToLastSectionSelected();
+    finish();
   }
 }

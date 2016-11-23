@@ -49,7 +49,7 @@ public class Splash extends Activity implements SplashView {
 
   @Override
   public void goToLastSectionSelected() {
-    CommonNavigator.gotToLastSectionSelected(this);
+    CommonNavigator.gotToLastSectionSelected();
     finish();
   }
 }

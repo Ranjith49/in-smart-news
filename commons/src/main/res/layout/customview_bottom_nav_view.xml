@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<smart.in.common.customview.BottomNavigationView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/bottom_nav_view_height"
-    android:layout_gravity="bottom"
+    android:background="@color/colorPrimaryLight"
     android:gravity="center"
     android:orientation="horizontal">
 
@@ -11,25 +11,25 @@
     <LinearLayout
         android:id="@+id/bottom_nav_sources"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/bottom_nav_source_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/bottom_nav_view_image_marginTop"
             android:src="@drawable/sources_drawable"/>
 
         <TextView
             android:id="@+id/bottom_nav_sourcesText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/bottom_nav_view_text_marginBottom"
             android:text="@string/bottom_nav_sources"
             android:textColor="@color/bottom_nav_color"
-            android:textSize="@dimen/bottom_nav_view_text_sizeDefault"/>
+            android:textSize="@dimen/bottombar_bottom_textNotSelected"/>
 
     </LinearLayout>
 
@@ -37,25 +37,25 @@
     <LinearLayout
         android:id="@+id/bottom_nav_headlines"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/bottom_nav_headlines_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/bottom_nav_view_image_marginTop"
             android:src="@drawable/headlines_drawable"/>
 
         <TextView
             android:id="@+id/bottom_nav_headLinesText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/bottom_nav_view_text_marginBottom"
             android:text="@string/bottom_nav_headlines"
             android:textColor="@color/bottom_nav_color"
-            android:textSize="@dimen/bottom_nav_view_text_sizeDefault"/>
+            android:textSize="@dimen/bottombar_bottom_textNotSelected"/>
 
     </LinearLayout>
 
@@ -63,25 +63,25 @@
     <LinearLayout
         android:id="@+id/bottom_nav_inbox"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/bottom_nav_inbox_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/bottom_nav_view_image_marginTop"
             android:src="@drawable/inbox_drawable"/>
 
         <TextView
             android:id="@+id/bottom_nav_inboxText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/bottom_nav_view_text_marginBottom"
             android:text="@string/bottom_nav_inbox"
             android:textColor="@color/bottom_nav_color"
-            android:textSize="@dimen/bottom_nav_view_text_sizeDefault"/>
+            android:textSize="@dimen/bottombar_bottom_textNotSelected"/>
 
     </LinearLayout>
 
@@ -89,26 +89,26 @@
     <LinearLayout
         android:id="@+id/bottom_nav_profile"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/bottom_nav_profile_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/bottom_nav_view_image_marginTop"
             android:src="@drawable/profile_drawable"/>
 
         <TextView
             android:id="@+id/bottom_nav_profileText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/bottom_nav_view_text_marginBottom"
             android:text="@string/bottom_nav_profile"
             android:textColor="@color/bottom_nav_color"
-            android:textSize="@dimen/bottom_nav_view_text_sizeDefault"/>
+            android:textSize="@dimen/bottombar_bottom_textNotSelected"/>
 
     </LinearLayout>
 
-</smart.in.common.customview.BottomNavigationView>
+</LinearLayout>

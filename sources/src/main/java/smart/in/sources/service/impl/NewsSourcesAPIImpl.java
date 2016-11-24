@@ -34,6 +34,10 @@ public class NewsSourcesAPIImpl extends NWServiceObservableAdapter<NewsSourcesAP
     newsSourcesAPI = NWRestClient
         .getResBGtClient()
         .create(NewsSourcesAPI.class);
+
+
+    // TODO [Remove after debugging , need to be done by Presenter]
+    requestAPI();
   }
 
 

@@ -25,4 +25,13 @@ public class SourceLogoEntity implements Serializable {
   public String getLarge() {
     return large;
   }
+
+  @Override
+  public String toString() {
+    return "[ "
+        + "Small : " + small
+        + "Medium : " + medium
+        + "Large : " + large
+        + "]";
+  }
 }

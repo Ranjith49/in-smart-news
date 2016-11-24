@@ -2,6 +2,7 @@ package smart.in.sources.service.impl;
 
 import rx.Single;
 import rx.SingleSubscriber;
+import rx.functions.Action1;
 import smart.in.common.CommonConstants;
 import smart.in.common.helper.Logger;
 import smart.in.common.service.NWResponseType;
@@ -34,21 +35,30 @@ public class NewsSourcesAPIImpl extends NWServiceObservableAdapter<NewsSourcesAP
     newsSourcesAPI = NWRestClient
         .getResBGtClient()
         .create(NewsSourcesAPI.class);
-
-
-    // TODO [Remove after debugging , need to be done by Presenter]
-    requestAPI();
   }
 
 
   @Override
   protected void onNW_Success(Single<NewsSourcesAPIResponse> responseSingle) {
-
+    // TODO [Remove after debugging , need to be done by Presenter]
+    responseSingle
+        .subscribe(new Action1<NewsSourcesAPIResponse>() {
+          @Override
+          public void call(NewsSourcesAPIResponse newsSourcesAPIResponse) {
+            Logger.d(TAG, "Response  : " + newsSourcesAPIResponse.toString());
+          }
+        });
   }
 
   @Override
   protected void onNW_Error(Single<NWResponseType> errorSingle) {
-
+    // TODO [Remove after debugging , need to be done by Presenter]
+    errorSingle.subscribe(new Action1<NWResponseType>() {
+      @Override
+      public void call(NWResponseType nwResponseType) {
+        Logger.d(TAG, "Error Response : " + nwResponseType.toString());
+      }
+    });
   }
 
   @Override

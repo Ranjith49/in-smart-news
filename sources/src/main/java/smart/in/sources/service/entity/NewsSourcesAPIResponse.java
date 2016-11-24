@@ -22,4 +22,12 @@ public class NewsSourcesAPIResponse implements Serializable {
   public ArrayList<SourceEntity> getSources() {
     return sources;
   }
+
+  @Override
+  public String toString() {
+    return " Status : "
+        + status
+        + " Sources : "
+        + sources.toString();
+  }
 }

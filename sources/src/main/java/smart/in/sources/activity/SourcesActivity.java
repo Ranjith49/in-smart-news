@@ -3,6 +3,7 @@ package smart.in.sources.activity;
 import android.app.Activity;
 import android.os.Bundle;
 
+import smart.in.common.CommonConstants;
 import smart.in.sources.R;
 import smart.in.sources.service.impl.NewsSourcesAPIImpl;
 
@@ -16,6 +17,8 @@ public class SourcesActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_sources);
 
-    NewsSourcesAPIImpl sourcesAPI = new NewsSourcesAPIImpl("en", "general", "in");
+    NewsSourcesAPIImpl sourcesAPI = new NewsSourcesAPIImpl(CommonConstants.EMPTY_STRING,
+        CommonConstants.EMPTY_STRING, CommonConstants.EMPTY_STRING);
+    sourcesAPI.requestAPI();
   }
 }

@@ -9,6 +9,7 @@ package smart.in.common;
 public interface CommonConstants {
 
   String EMPTY_STRING = "";
+  long HTTP_CLIENT_TIMEOUT = 60000;
 
   String SOURCES_ACTION = "smartSourcesAction";
   String HEADLINES_ACTION = "smartHeadLinesAction";

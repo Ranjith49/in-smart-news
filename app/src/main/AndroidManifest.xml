@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="smart.news.in.newssmart">
+<manifest
+    package="in.news.smart"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:name="in.news.smart.SmartNewsApplication"

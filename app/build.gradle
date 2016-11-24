@@ -1,29 +1,44 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+  compileSdkVersion 23
+  buildToolsVersion "23.0.3"
 
-    defaultConfig {
-        applicationId "in.news.smart"
-        minSdkVersion 21
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+  defaultConfig {
+    applicationId "in.news.smart"
+    minSdkVersion 21
+    targetSdkVersion 23
+    versionCode 1
+    versionName "1.0"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+  }
+
+  productFlavors {
+    def API_ENDPOINT = "API_ENDPOINT"
+    def LOGGER_ENABLED = "LOGGER_ENABLED"
+
+    dev {
+      buildConfigField "String", API_ENDPOINT, '"https://newsapi.org/v1/"'
+      buildConfigField "boolean", LOGGER_ENABLED, 'true'
     }
+
+    prod {
+      buildConfigField "String", API_ENDPOINT, '"https://newsapi.org/v1/"'
+      buildConfigField "boolean", LOGGER_ENABLED, 'false'
+    }
+  }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':headlines')
-    compile project(':inbox')
-    compile project(':profile')
-    compile project(':sources')
-    compile project(':onboarding')
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  compile project(':headlines')
+  compile project(':inbox')
+  compile project(':profile')
+  compile project(':sources')
+  compile project(':onboarding')
 }

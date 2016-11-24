@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="smart.in.sources">
+<manifest package="smart.in.sources"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
 
         <!-- Home Sources Activity -->
         <activity
-            android:name=".SourcesActivity"
+            android:name=".activity.SourcesActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_No_Action_Bar">
 

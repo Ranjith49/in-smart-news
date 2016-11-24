@@ -1,7 +1,9 @@
-package smart.in.sources;
+package smart.in.sources.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import smart.in.sources.R;
 
 /**
  * Home Sources Activity Responsible for the Sources Tab

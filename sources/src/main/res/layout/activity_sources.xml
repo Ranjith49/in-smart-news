@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/activity_sources"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_sources"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="smart.in.sources.SourcesActivity">
+    tools:context="smart.in.sources.activity.SourcesActivity">
 
 
     <!-- Bottom Navigation Bar -->

@@ -48,4 +48,25 @@ public class DataUtil {
       return defaultValue;
     }
   }
+
+  /**
+   * Method saying whether the string is null / empty
+   *
+   * @param str -- string passed
+   * @return -- boolean it is true /false
+   */
+  public static boolean isEmpty(String str) {
+    return str == null || str.trim().length() == 0;
+  }
+
+  /**
+   * Method saying whether the char-sequence is null /empty
+   *
+   * @param charSequence -- charSequence passed
+   * @return -- true /false
+   */
+  public static boolean isEmpty(CharSequence charSequence) {
+    return charSequence == null || charSequence.length() == 0;
+  }
+
 }

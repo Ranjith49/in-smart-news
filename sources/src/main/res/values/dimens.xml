@@ -1,4 +1,13 @@
 <resources>
 
-
+    <dimen name="sources_error_image_dimens">240dp</dimen>
+    <dimen name="sources_error_txt_size">20dp</dimen>
+    <dimen name="sources_list_item_height">80dp</dimen>
+    <dimen name="sources_list_item_side_margin">16dp</dimen>
+    <dimen name="sources_list_item_image_dimen">60dp</dimen>
+    <dimen name="sources_list_item_text_sideMargin">72dp</dimen>
+    <dimen name="sources_list_item_title_textSize">16dp</dimen>
+    <dimen name="sources_list_item_desc_textSize">14dp</dimen>
+    <dimen name="sources_list_item_dividerHeight">1dp</dimen>
+    <dimen name="sources_list_item_dividerMargin">2dp</dimen>
 </resources>

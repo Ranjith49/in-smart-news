@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sources</string>
+
+    <string name="sources_no_content">No Sources Found \n Click to Retry</string>
+    <string name="sources_un_expected">Un-Expected Error \n Click to Retry</string>
+    <string name="sources_no_internet">No Internet Connection \n Try Again</string>
 </resources>

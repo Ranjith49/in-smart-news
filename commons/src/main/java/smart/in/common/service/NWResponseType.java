@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
  */
 
 public enum NWResponseType {
+  NW_NO_INTERNET(100),
   NW_OK(HttpURLConnection.HTTP_OK),
   NW_INTERNAL_ERROR(HttpURLConnection.HTTP_INTERNAL_ERROR),
   NW_NOT_FOUND(HttpURLConnection.HTTP_NOT_FOUND),

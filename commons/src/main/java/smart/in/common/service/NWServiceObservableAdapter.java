@@ -23,39 +23,39 @@ public abstract class NWServiceObservableAdapter<RESPONSE_ENTITY> {
 
   private static ConnectivityManager manager;
   private final String TAG = "NW-SERVICE";
+  protected SingleSubscriber<Response<RESPONSE_ENTITY>> singleSubscriber;
 
   /**
    * Method to request actual Network call and convert the response entity to
    * a) Observable<RESPONSE_ENTITY> or
    * b) Single<NWResponseType>
    */
-  protected SingleSubscriber requestAPI(Single<Response<RESPONSE_ENTITY>> observable) {
+  protected void requestAPI(Single<Response<RESPONSE_ENTITY>> observable) {
     if (null == manager) {
       manager = (ConnectivityManager) Utils.getAppContext()
           .getSystemService(Context.CONNECTIVITY_SERVICE);
     }
 
-    SingleSubscriber<Response<RESPONSE_ENTITY>> subscriber =
-        new SingleSubscriber<Response<RESPONSE_ENTITY>>() {
-          @Override
-          public void onError(Throwable e) {
-            Logger.d(TAG, e.toString());
-            onNW_Error(Single.just(NWResponseType.NW_INTERNAL_ERROR));
-          }
+    singleSubscriber = new SingleSubscriber<Response<RESPONSE_ENTITY>>() {
+      @Override
+      public void onError(Throwable e) {
+        Logger.d(TAG, e.toString());
+        onNW_Error(Single.just(NWResponseType.NW_INTERNAL_ERROR));
+      }
 
-          @Override
-          public void onSuccess(Response<RESPONSE_ENTITY> o) {
-            processAPIResponse(o);
-          }
-        };
+      @Override
+      public void onSuccess(Response<RESPONSE_ENTITY> o) {
+        Logger.d(TAG, o.message());
+        processAPIResponse(o);
+      }
+    };
     if (!isNWConnected(manager)) {
-      onNW_Error(Single.just(NWResponseType.NW_NO_CONTENT));
+      onNW_Error(Single.just(NWResponseType.NW_NO_INTERNET));
     } else {
       observable
           .observeOn(AndroidSchedulers.mainThread())
-          .subscribe(subscriber);
+          .subscribe(singleSubscriber);
     }
-    return subscriber;
   }
 
   /**

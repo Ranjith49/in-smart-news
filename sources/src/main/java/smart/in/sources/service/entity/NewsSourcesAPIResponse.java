@@ -13,7 +13,7 @@ import smart.in.sources.entity.SourceEntity;
 public class NewsSourcesAPIResponse implements Serializable {
 
   String status;
-  ArrayList<SourceEntity> sources;
+  ArrayList<SourceEntity> sources = new ArrayList<>();
 
   public String getStatus() {
     return status;

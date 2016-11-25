@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/sources_list_item_height"
+    android:layout_marginLeft="@dimen/sources_list_item_side_margin"
+    android:layout_marginRight="@dimen/sources_list_item_side_margin"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <!-- Source icon -->
+    <ImageView
+        android:id="@+id/sources_list_icon"
+        android:layout_width="@dimen/sources_list_item_image_dimen"
+        android:layout_height="@dimen/sources_list_item_image_dimen"
+        android:layout_centerVertical="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/newssource"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/sources_list_item_text_sideMargin"
+        android:orientation="vertical">
+
+        <!-- Source Title -->
+        <TextView
+            android:id="@+id/sources_list_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/sources_list_item_title_textSize"/>
+
+        <!-- Source Desc -->
+        <TextView
+            android:id="@+id/sources_list_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/sources_list_item_desc_textSize"/>
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sources_list_item_dividerHeight"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/sources_list_item_dividerMargin"
+        android:background="@color/colorDivider"/>
+</RelativeLayout>

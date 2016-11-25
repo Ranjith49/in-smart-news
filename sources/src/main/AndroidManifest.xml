@@ -9,7 +9,7 @@
 
         <!-- Home Sources Activity -->
         <activity
-            android:name=".activity.SourcesActivity"
+            android:name=".view.activity.SourcesActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_No_Action_Bar">
 

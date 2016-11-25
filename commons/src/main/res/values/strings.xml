@@ -5,6 +5,6 @@
     <string name="bottom_nav_headlines">HeadLines</string>
     <string name="bottom_nav_sources">Sources</string>
     <string name="bottom_nav_inbox">InBox</string>
-    <string name="bottom_nav_profile">Profile</string>
+    <string name="bottom_nav_profile">My Profile</string>
 
 </resources>

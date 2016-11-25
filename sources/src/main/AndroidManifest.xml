@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="smart.in.sources"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="smart.in.sources">
 
     <application
         android:allowBackup="true"
@@ -12,13 +12,18 @@
             android:name=".view.activity.SourcesActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_No_Action_Bar">
-
             <intent-filter>
                 <action android:name="smartSourcesAction"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
 
+        <!-- Articles Activity -->
+        <activity
+            android:name=".view.activity.ArticlesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_Action_Bar">
+        </activity>
     </application>
 
 </manifest>

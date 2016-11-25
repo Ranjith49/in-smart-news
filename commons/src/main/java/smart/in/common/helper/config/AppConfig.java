@@ -35,6 +35,10 @@ public class AppConfig {
     return instance;
   }
 
+  public String getAPIKey() {
+    return appConfigBuilder.apiKey;
+  }
+
   public String getAppUrl() {
     return appConfigBuilder.apiEndPoint;
   }

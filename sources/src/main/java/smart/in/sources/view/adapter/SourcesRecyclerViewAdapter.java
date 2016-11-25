@@ -14,6 +14,7 @@ import smart.in.common.helper.Utils;
 import smart.in.sources.R;
 import smart.in.sources.entity.SourceEntity;
 import smart.in.sources.entity.SourceLogoEntity;
+import smart.in.sources.view.view.SourceRecyclerCallBack;
 import smart.in.sources.view.viewholder.SourcesViewHolder;
 
 /**
@@ -25,9 +26,12 @@ import smart.in.sources.view.viewholder.SourcesViewHolder;
 public class SourcesRecyclerViewAdapter extends RecyclerView.Adapter<SourcesViewHolder> {
 
   private ArrayList<SourceEntity> entities;
+  private SourceRecyclerCallBack callBack;
 
-  public SourcesRecyclerViewAdapter(ArrayList<SourceEntity> entities) {
+  public SourcesRecyclerViewAdapter(ArrayList<SourceEntity> entities,
+                                    SourceRecyclerCallBack callBack) {
     this.entities = entities;
+    this.callBack = callBack;
   }
 
   @Override
@@ -39,7 +43,7 @@ public class SourcesRecyclerViewAdapter extends RecyclerView.Adapter<SourcesView
 
   @Override
   public void onBindViewHolder(SourcesViewHolder holder, int position) {
-    int item_pos = holder.getAdapterPosition();
+    final int item_pos = holder.getAdapterPosition();
     holder.sourceTitle.setText(entities.get(item_pos).getName());
     holder.sourceDesc.setText(entities.get(item_pos).getDescription());
 
@@ -53,6 +57,13 @@ public class SourcesRecyclerViewAdapter extends RecyclerView.Adapter<SourcesView
           .error(R.drawable.newssource)
           .into(holder.sourceIcon);
     }
+
+    holder.sourcesLayout.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        callBack.onSourceClicked(entities.get(item_pos));
+      }
+    });
   }
 
   @Override

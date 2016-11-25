@@ -14,16 +14,18 @@ import java.util.ArrayList;
 import smart.in.common.service.NWResponseType;
 import smart.in.sources.R;
 import smart.in.sources.entity.SourceEntity;
+import smart.in.sources.helper.SourcesNavigator;
 import smart.in.sources.presenter.NewsSourcePresenter;
 import smart.in.sources.view.adapter.SourcesRecyclerViewAdapter;
 import smart.in.sources.view.view.NewsSourceView;
+import smart.in.sources.view.view.SourceRecyclerCallBack;
 
 /**
  * Home Sources Activity Responsible for the Sources Tab
  *
  * @author ranjith
  */
-public class SourcesActivity extends Activity implements NewsSourceView {
+public class SourcesActivity extends Activity implements NewsSourceView, SourceRecyclerCallBack {
 
   private RecyclerView sourcesList;
   private ProgressBar sourcesProgressBar;
@@ -83,7 +85,7 @@ public class SourcesActivity extends Activity implements NewsSourceView {
 
   @Override
   public void showSources(ArrayList<SourceEntity> sources) {
-    adapter = new SourcesRecyclerViewAdapter(sources);
+    adapter = new SourcesRecyclerViewAdapter(sources, this);
     sourcesList.setLayoutManager(new LinearLayoutManager(this));
     sourcesList.setAdapter(adapter);
 
@@ -98,5 +100,10 @@ public class SourcesActivity extends Activity implements NewsSourceView {
     } else {
       sourcesProgressBar.setVisibility(View.GONE);
     }
+  }
+
+  @Override
+  public void onSourceClicked(SourceEntity entity) {
+    SourcesNavigator.goToArticleScreen(this, entity);
   }
 }

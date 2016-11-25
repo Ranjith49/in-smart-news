@@ -21,6 +21,7 @@ public class SmartNewsApplication extends Application {
     super.attachBaseContext(base);
     new AppConfigBuilder()
         .setAPIEndPoint(BuildConfig.API_ENDPOINT)
+        .setApiKey(BuildConfig.API_KEY)
         .setLoggerEnabled(true)
         .createAppConfig();
   }

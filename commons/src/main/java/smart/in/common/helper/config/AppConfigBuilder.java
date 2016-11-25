@@ -9,6 +9,7 @@ package smart.in.common.helper.config;
 public class AppConfigBuilder {
 
   String apiEndPoint;
+  String apiKey;
   boolean logEnabled;
 
   public AppConfigBuilder() {
@@ -22,6 +23,11 @@ public class AppConfigBuilder {
 
   public AppConfigBuilder setAPIEndPoint(String endPoint) {
     this.apiEndPoint = endPoint;
+    return this;
+  }
+
+  public AppConfigBuilder setApiKey(String apiKey) {
+    this.apiKey = apiKey;
     return this;
   }
 

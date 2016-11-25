@@ -18,7 +18,6 @@ import smart.in.sources.service.model.NewsSourcesAPI;
 public class NewsSourcesAPIImpl extends NWServiceObservableAdapter<NewsSourcesAPIResponse>
     implements NewsSourcesAPIService {
 
-  private final String TAG = NewsSourcesAPIImpl.class.getSimpleName();
   private String language = CommonConstants.EMPTY_STRING;
   private String category = CommonConstants.EMPTY_STRING;
   private String country = CommonConstants.EMPTY_STRING;

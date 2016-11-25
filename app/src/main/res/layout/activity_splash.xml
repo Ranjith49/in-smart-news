@@ -5,7 +5,6 @@
     android:id="@+id/activity_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryLight"
     tools:context="in.news.smart.activity.Splash">
 
     <!-- Splash Screen launched , on every app launch -->

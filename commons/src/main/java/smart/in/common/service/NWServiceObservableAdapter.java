@@ -22,7 +22,7 @@ import smart.in.common.helper.Utils;
 public abstract class NWServiceObservableAdapter<RESPONSE_ENTITY> {
 
   private static ConnectivityManager manager;
-  private final String TAG = "NW-SERVICE";
+  protected final String TAG = "NW-SERVICE";
   protected SingleSubscriber<Response<RESPONSE_ENTITY>> singleSubscriber;
 
   /**

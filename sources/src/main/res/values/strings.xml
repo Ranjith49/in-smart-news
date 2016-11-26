@@ -8,4 +8,11 @@
     <string name="articles_no_content">No Articles Found \n Click to Retry</string>
     <string name="articles_un_expected">Un-Expected Error \n Click to Retry</string>
     <string name="articles_no_internet">No Internet Connection \n Try Again</string>
+
+    <string name="article_action_1">SHARE</string>
+    <string name="article_action_2">READ MORE</string>
+    <string name="menu_heart">Interest</string>
+    <string name="menu_sort">Sort</string>
+
+    <string name="article_sort_by_title">Sort Articles By</string>
 </resources>

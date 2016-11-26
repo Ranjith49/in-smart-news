@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/article_interest"
+        android:icon="@drawable/heart_outline"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_heart"/>
+
+    <item
+        android:id="@+id/article_sort"
+        android:icon="@drawable/sort_menu"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_sort"/>
+</menu>

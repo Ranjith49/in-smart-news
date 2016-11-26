@@ -1,47 +1,48 @@
 apply plugin: 'com.android.library'
 
 android {
-  compileSdkVersion 23
-  buildToolsVersion "23.0.3"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
 
-  defaultConfig {
-    minSdkVersion 21
-    targetSdkVersion 23
-    versionCode 1
-    versionName "1.0"
-  }
-  buildTypes {
-    release {
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
     }
-  }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
 }
 
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 
-  // Support annotation..
-  compile 'com.android.support:support-annotations:25.0.1'
+    // Support annotation..
+    compile 'com.android.support:support-annotations:25.0.1'
 
-  // View Pager + Fragments
-  compile 'com.android.support:support-fragment:25.0.1'
-  compile 'com.android.support:support-v13:25.0.1'
+    // View Pager + Fragments
+    compile 'com.android.support:support-fragment:25.0.1'
+    compile 'com.android.support:support-v13:25.0.1'
 
-  //Retrofit2 + Ok-Http3 + Gson Converter ..
-  compile 'com.squareup.retrofit2:retrofit:2.1.0'
-  compile 'com.squareup.okhttp3:okhttp:3.4.2'
-  compile 'com.squareup.okhttp3:logging-interceptor:3.4.2'
-  compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //Retrofit2 + Ok-Http3 + Gson Converter ..
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.okhttp3:okhttp:3.4.2'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 
-  //RX Java , RX Android + Retrofit2 Call Adapter ..
-  compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-  compile 'io.reactivex:rxandroid:1.2.1'
-  compile 'io.reactivex:rxjava:1.1.6'
+    //RX Java , RX Android + Retrofit2 Call Adapter ..
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
 
-  //Recycler View :
-  compile 'com.android.support:recyclerview-v7:25.0.1'
+    //Recycler View :
+    compile 'com.android.support:recyclerview-v7:25.0.1'
+    compile 'com.android.support:cardview-v7:25.0.1'
 
-  //Picasso :
-  compile 'com.squareup.picasso:picasso:2.5.2'
+    //Picasso :
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }

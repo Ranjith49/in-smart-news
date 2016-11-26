@@ -14,5 +14,9 @@
 
     <dimen name="article_error_image_dimens">240dp</dimen>
     <dimen name="article_error_txt_size">20dp</dimen>
-
+    <dimen name="article_list_image_height">192dp</dimen>
+    <dimen name="article_list_title_size">24dp</dimen>
+    <dimen name="article_list_desc_auth_size">14dp</dimen>
+    <dimen name="article_list_side_16_margin">16dp</dimen>
+    <dimen name="article_list_action_8_padding">8dp</dimen>
 </resources>

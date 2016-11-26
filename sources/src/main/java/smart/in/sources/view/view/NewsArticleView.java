@@ -33,4 +33,11 @@ public interface NewsArticleView {
    * @param show -- whether to show or not
    */
   void showProgressMsg(boolean show);
+
+  /**
+   * Method called , when the sort option is clicked
+   *
+   * @param option -- option
+   */
+  void onSortOptionClicked(String option);
 }

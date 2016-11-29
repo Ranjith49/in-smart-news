@@ -1,11 +1,13 @@
 package smart.in.sources.entity;
 
+import java.io.Serializable;
+
 /**
  * Entity class for an Article
  *
  * @author ranjithsuda
  */
-public class ArticleEntity {
+public class ArticleEntity implements Serializable {
 
   String author;
   String title;

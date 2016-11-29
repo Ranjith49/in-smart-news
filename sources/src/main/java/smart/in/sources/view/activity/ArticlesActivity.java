@@ -1,6 +1,7 @@
 package smart.in.sources.view.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,12 +20,14 @@ import smart.in.sources.R;
 import smart.in.sources.entity.ArticleEntity;
 import smart.in.sources.entity.SourceEntity;
 import smart.in.sources.helper.SourcesConstants;
+import smart.in.sources.helper.SourcesNavigator;
 import smart.in.sources.presenter.NewsArticlePresenter;
 import smart.in.sources.view.adapter.ArticleRecyclerViewAdapter;
 import smart.in.sources.view.fragment.ArticleSortDialogFragment;
+import smart.in.sources.view.view.ArticleRecyclerCallBack;
 import smart.in.sources.view.view.NewsArticleView;
 
-public class ArticlesActivity extends Activity implements NewsArticleView {
+public class ArticlesActivity extends Activity implements NewsArticleView, ArticleRecyclerCallBack {
 
   private final String ARTICLE_SORT_TAG = "Article_Sort_Dialog";
   private RecyclerView articleRecyclerView;
@@ -121,7 +124,7 @@ public class ArticlesActivity extends Activity implements NewsArticleView {
 
   @Override
   public void showSources(ArrayList<ArticleEntity> articles) {
-    adapter = new ArticleRecyclerViewAdapter(articles);
+    adapter = new ArticleRecyclerViewAdapter(articles, this);
     articleRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     articleRecyclerView.setAdapter(adapter);
 
@@ -152,5 +155,20 @@ public class ArticlesActivity extends Activity implements NewsArticleView {
   private void startPresenter() {
     presenter = new NewsArticlePresenter(this, entity.getId(), currentSort);
     presenter.start();
+  }
+
+  @Override
+  public void onItemShare(ArticleEntity entity) {
+    Intent intent = new Intent();
+    intent.putExtra(Intent.EXTRA_TITLE, entity.getTitle());
+    intent.putExtra(Intent.EXTRA_SUBJECT, entity.getTitle());
+    intent.putExtra(Intent.EXTRA_TEXT, entity.getUrl());
+    intent.setType("text/plain");
+    startActivity(intent);
+  }
+
+  @Override
+  public void onReadMore(ArticleEntity entity) {
+    SourcesNavigator.goToArticleWebView(this, entity);
   }
 }

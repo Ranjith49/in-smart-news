@@ -10,10 +10,10 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import smart.in.common.helper.DataUtil;
-import smart.in.common.helper.Logger;
 import smart.in.common.helper.Utils;
 import smart.in.sources.R;
 import smart.in.sources.entity.ArticleEntity;
+import smart.in.sources.view.view.ArticleRecyclerCallBack;
 import smart.in.sources.view.viewholder.ArticleViewHolder;
 
 /**
@@ -26,9 +26,12 @@ public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleView
 
   private final String TAG = ArticleRecyclerViewAdapter.class.getSimpleName();
   private ArrayList<ArticleEntity> entities;
+  private ArticleRecyclerCallBack callBack;
 
-  public ArticleRecyclerViewAdapter(ArrayList<ArticleEntity> entities) {
+  public ArticleRecyclerViewAdapter(ArrayList<ArticleEntity> entities,
+                                    ArticleRecyclerCallBack callBack) {
     this.entities = entities;
+    this.callBack = callBack;
   }
 
   @Override
@@ -76,14 +79,14 @@ public class ArticleRecyclerViewAdapter extends RecyclerView.Adapter<ArticleView
     holder.articleAction1.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Logger.d(TAG, "Share Url : -" + entities.get(item_pos).getUrl());
+        callBack.onItemShare(entities.get(item_pos));
       }
     });
 
     holder.articleAction2.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Logger.d(TAG, "Read More Url : -" + entities.get(item_pos).getUrl());
+        callBack.onReadMore(entities.get(item_pos));
       }
     });
 

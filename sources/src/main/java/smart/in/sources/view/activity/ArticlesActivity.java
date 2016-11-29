@@ -17,8 +17,10 @@ import java.util.ArrayList;
 
 import smart.in.common.service.NWResponseType;
 import smart.in.sources.R;
+import smart.in.sources.db.SourceMemImpl;
 import smart.in.sources.entity.ArticleEntity;
 import smart.in.sources.entity.SourceEntity;
+import smart.in.sources.entity.SourceUserEntity;
 import smart.in.sources.helper.SourcesConstants;
 import smart.in.sources.helper.SourcesNavigator;
 import smart.in.sources.presenter.NewsArticlePresenter;
@@ -99,6 +101,19 @@ public class ArticlesActivity extends Activity implements NewsArticleView, Artic
       ArticleSortDialogFragment fragment = ArticleSortDialogFragment.getInstance(bundle);
       fragment.setCallBack(this);
       fragment.show(getFragmentManager(), ARTICLE_SORT_TAG);
+      return true;
+    } else if (i == R.id.article_interest) {
+      SourceUserEntity userEntity = new SourceUserEntity();
+      userEntity.setId(entity.getId());
+      userEntity.setName(entity.getName());
+      userEntity.setUrlImage(entity.getUrlsToLogos().getSmall());
+      userEntity.setAddTime(System.currentTimeMillis());
+      boolean added = SourceMemImpl.getInstance().addOrRemoveSourceToProfile(userEntity);
+      if (added) {
+        item.setIcon(R.drawable.heart);
+      } else {
+        item.setIcon(R.drawable.heart_outline);
+      }
       return true;
     } else {
       return super.onOptionsItemSelected(item);

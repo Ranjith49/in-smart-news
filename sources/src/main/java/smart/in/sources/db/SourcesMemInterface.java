@@ -12,6 +12,11 @@ import smart.in.sources.entity.SourceUserEntity;
 public interface SourcesMemInterface {
 
   /**
+   * Initialize the data here ..
+   */
+  void init();
+
+  /**
    * Method to be called when u want to add / remove source to profile
    *
    * @param entity -- entity
@@ -30,4 +35,12 @@ public interface SourcesMemInterface {
    * @return -- observable of user sources
    */
   Observable<SourceUserEntity> getUserSources();
+
+  /**
+   * Method to check , whether the entity is part of the profile or not
+   *
+   * @param entity -- entity
+   * @return -- whether it is in part of profile or not
+   */
+  boolean isSourceInProfile(SourceUserEntity entity);
 }

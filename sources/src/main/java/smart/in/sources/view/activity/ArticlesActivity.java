@@ -86,6 +86,17 @@ public class ArticlesActivity extends Activity implements NewsArticleView, Artic
     if (entity.getSortBysAvailable().size() == 1) {
       item.setVisible(false);
     }
+
+    MenuItem item2 = menu.findItem(R.id.article_interest);
+    SourceUserEntity userEntity = new SourceUserEntity();
+    userEntity.setId(entity.getId());
+    userEntity.setName(entity.getName());
+    userEntity.setUrlImage(entity.getUrlsToLogos().getSmall());
+    if (SourceMemImpl.getInstance().isSourceInProfile(userEntity)) {
+      item2.setIcon(R.drawable.heart);
+    } else {
+      item2.setIcon(R.drawable.heart_outline);
+    }
     return true;
   }
 

@@ -10,6 +10,15 @@
     android:clickable="true"
     android:orientation="vertical">
 
+
+    <!-- Part of the Profile -->
+    <ImageView
+        android:id="@+id/sources_list_in_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/heart"/>
+
     <!-- Source icon -->
     <ImageView
         android:id="@+id/sources_list_icon"
@@ -19,11 +28,13 @@
         android:scaleType="centerInside"
         android:src="@drawable/newssource"/>
 
+    <!-- Title + Desc -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/sources_list_item_text_sideMargin"
+        android:layout_toLeftOf="@id/sources_list_in_profile"
         android:orientation="vertical">
 
         <!-- Source Title -->
@@ -54,4 +65,5 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/sources_list_item_dividerMargin"
         android:background="@color/colorDivider"/>
+
 </RelativeLayout>

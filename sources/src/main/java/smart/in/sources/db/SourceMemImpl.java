@@ -19,8 +19,7 @@ public class SourceMemImpl implements SourcesMemInterface {
   private SourcesDBInterface dbInterface;
 
   private SourceMemImpl() {
-    dbInterface = SourcesDbImpl.getInstance();
-    entities = dbInterface.getAllSources();
+    // Nothing to do ..
   }
 
   public static SourcesMemInterface getInstance() {
@@ -32,6 +31,12 @@ public class SourceMemImpl implements SourcesMemInterface {
       }
     }
     return memInterface;
+  }
+
+  @Override
+  public void init() {
+    dbInterface = SourcesDbImpl.getInstance();
+    entities = dbInterface.getAllSources();
   }
 
   @Override
@@ -56,5 +61,10 @@ public class SourceMemImpl implements SourcesMemInterface {
   @Override
   public Observable<SourceUserEntity> getUserSources() {
     return Observable.from(entities);
+  }
+
+  @Override
+  public boolean isSourceInProfile(SourceUserEntity entity) {
+    return entities.contains(entity);
   }
 }

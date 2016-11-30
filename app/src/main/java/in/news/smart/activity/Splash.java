@@ -7,6 +7,7 @@ import in.news.smart.R;
 import in.news.smart.presenter.SplashPresenter;
 import in.news.smart.view.SplashView;
 import smart.in.common.helper.CommonNavigator;
+import smart.in.sources.db.SourceMemImpl;
 import smartin.onboarding.helper.OnBoardingNavigator;
 
 public class Splash extends Activity implements SplashView {
@@ -49,6 +50,9 @@ public class Splash extends Activity implements SplashView {
 
   @Override
   public void goToLastSectionSelected() {
+    //Initialise the Other Modules DB  ..
+    SourceMemImpl.getInstance().init();
+
     CommonNavigator.gotToLastSectionSelected();
     finish();
   }

@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import smart.in.common.helper.DataUtil;
 import smart.in.common.helper.Utils;
 import smart.in.sources.R;
+import smart.in.sources.db.SourceMemImpl;
 import smart.in.sources.entity.SourceEntity;
 import smart.in.sources.entity.SourceLogoEntity;
+import smart.in.sources.entity.SourceUserEntity;
 import smart.in.sources.view.view.SourceRecyclerCallBack;
 import smart.in.sources.view.viewholder.SourcesViewHolder;
 
@@ -64,6 +66,16 @@ public class SourcesRecyclerViewAdapter extends RecyclerView.Adapter<SourcesView
         callBack.onSourceClicked(entities.get(item_pos));
       }
     });
+
+    SourceUserEntity entity = new SourceUserEntity();
+    entity.setId(entities.get(item_pos).getId());
+    entity.setName(entities.get(item_pos).getName());
+    entity.setUrlImage(entities.get(item_pos).getUrlsToLogos().getSmall());
+    if (SourceMemImpl.getInstance().isSourceInProfile(entity)) {
+      holder.sourceProfile.setVisibility(View.VISIBLE);
+    } else {
+      holder.sourceProfile.setVisibility(View.GONE);
+    }
   }
 
   @Override

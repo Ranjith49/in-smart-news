@@ -46,6 +46,14 @@ public class SourcesActivity extends Activity implements NewsSourceView, SourceR
   }
 
   @Override
+  protected void onResume() {
+    super.onResume();
+    if (adapter != null) {
+      adapter.notifyDataSetChanged();
+    }
+  }
+
+  @Override
   protected void onDestroy() {
     super.onDestroy();
     presenter.stop();

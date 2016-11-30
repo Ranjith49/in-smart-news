@@ -24,7 +24,7 @@ public class SourcesDbImpl implements SourcesDBInterface {
   private SQLiteDatabase database;
 
   private SourcesDbImpl() {
-    SmartNewsSQLLiteHelper sqlLiteHelper = new SmartNewsSQLLiteHelper(Utils.getAppContext());
+    sqlLiteHelper = new SmartNewsSQLLiteHelper(Utils.getAppContext());
   }
 
   public static SourcesDBInterface getInstance() {
@@ -75,6 +75,7 @@ public class SourcesDbImpl implements SourcesDBInterface {
 
   @Override
   public ArrayList<SourceUserEntity> getAllSources() {
+    autoOpen();
     ArrayList<SourceUserEntity> data = new ArrayList<>();
     String sortOder = SmartNewsSQLLiteHelper.COL_SOURCE_ADD_TIME + " DESC";
     Cursor c = database.query(SmartNewsSQLLiteHelper.TABLE_SOURCES,

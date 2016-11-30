@@ -20,6 +20,7 @@ public class SourcesViewHolder extends RecyclerView.ViewHolder {
   public TextView sourceTitle;
   public TextView sourceDesc;
   public ImageView sourceIcon;
+  public ImageView sourceProfile;
 
   public SourcesViewHolder(View itemView) {
     super(itemView);
@@ -27,5 +28,6 @@ public class SourcesViewHolder extends RecyclerView.ViewHolder {
     sourceTitle = (TextView) itemView.findViewById(R.id.sources_list_title);
     sourceDesc = (TextView) itemView.findViewById(R.id.sources_list_desc);
     sourceIcon = (ImageView) itemView.findViewById(R.id.sources_list_icon);
+    sourceProfile = (ImageView) itemView.findViewById(R.id.sources_list_in_profile);
   }
 }

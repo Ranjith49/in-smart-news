@@ -20,7 +20,7 @@ public class SmartNewsSQLLiteHelper extends SQLiteOpenHelper {
   // Table for the Source Entities ..
   public static final String TABLE_SOURCES = "sources";
 
-  public static final String COL_SOURCE_ID = "source-id";
+  public static final String COL_SOURCE_ID = "source_id";
   public static final String COL_SOURCE_NAME = "source_name";
   public static final String COL_SOURCE_IMAGE_URL = "source_image_url";
   public static final String COL_SOURCE_ADD_TIME = "source_add_time";
